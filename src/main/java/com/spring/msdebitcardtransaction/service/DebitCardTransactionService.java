@@ -30,4 +30,6 @@ public interface DebitCardTransactionService {
     Flux<DebitCardTransaction> findAmountCreditsPaidDebitCard(String id);
     
     Flux<DebitCardTransaction> findByCreditCreditCardCustomerId(String id);
+
+    Flux<DebitCardTransaction> findByDebitCardCustomerId(String id);
 }

@@ -122,4 +122,8 @@ public class DebitCardTransactionController {
         return debitCardTransactionService.findByCreditCreditCardCustomerId(idcustomer);
     }
     
+    @GetMapping("/findByDebitCardCustomerId/{idcustomer}")
+    public Flux<DebitCardTransaction> findByDebitCardCustomerId(@PathVariable String idcustomer) {
+        return debitCardTransactionService.findByDebitCardCustomerId(idcustomer);
+    }
 }

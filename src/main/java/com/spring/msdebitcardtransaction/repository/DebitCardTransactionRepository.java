@@ -12,4 +12,6 @@ public interface DebitCardTransactionRepository extends ReactiveMongoRepository<
 	Flux<DebitCardTransaction> findByCreditId(String id);
 	
 	Flux<DebitCardTransaction> findByCreditCreditCardCustomerId(String idcustomer);
+	
+	Flux<DebitCardTransaction> findByDebitCardCustomerId(String idcustomer);
 }

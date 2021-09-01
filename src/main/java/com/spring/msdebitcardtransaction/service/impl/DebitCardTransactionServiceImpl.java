@@ -78,7 +78,6 @@ public class DebitCardTransactionServiceImpl implements DebitCardTransactionServ
 
 	@Override
 	public Mono<DebitCardTransaction> checkUpdateBalanceDebitCard(String cardNumber, DebitCardTransaction credit) {
-		log.info("");
 		return webClientDebitCard.put().uri("/checkUpdateBalanceDebitCard/{cardNumber}", cardNumber)
                 .accept(MediaType.APPLICATION_JSON)
                 .syncBody(credit)
@@ -102,6 +101,11 @@ public class DebitCardTransactionServiceImpl implements DebitCardTransactionServ
 	@Override
 	public Flux<DebitCardTransaction> findByCreditCreditCardCustomerId(String idcustomer) {
 		return debitCardTransactionRepository.findByCreditCreditCardCustomerId(idcustomer);
+	}
+
+	@Override
+	public Flux<DebitCardTransaction> findByDebitCardCustomerId(String id) {
+		return debitCardTransactionRepository.findByDebitCardCustomerId(id);
 	}
 	
 	
